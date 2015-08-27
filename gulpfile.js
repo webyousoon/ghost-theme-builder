@@ -20,13 +20,17 @@ var basePaths = {
   dest: './' + pjson.name + '/'
 };
 var paths = {
-  html: {
-      src: basePaths.src + 'assets/**/*.html',
+  pages: {
+      src: basePaths.src + 'pages/**',
       dest: basePaths.dest
   },
   images: {
-      src: basePaths.src + 'assets/img/*',
+      src: basePaths.src + 'assets/img/**',
       dest: basePaths.dest + 'assets/img/'
+  },
+  assets: {
+      src: [basePaths.src + 'assets/fonts', basePaths.src + 'assets/icons'],
+      dest: basePaths.dest + 'assets'
   },
   scripts: {
       src: basePaths.src + 'scripts/**/*.js',
@@ -95,13 +99,13 @@ gulp.task('css', function () {
     .pipe(reload({stream: true}));
 });
 
-gulp.task('html', function() {
-  return gulp.src(paths.html.src)
+gulp.task('pages', function() {
+  return gulp.src(paths.pages.src)
     .pipe($.preprocess({context: {NODE_ENV: production?'production':''}}))
     .pipe($.if(production,
       $.htmlmin({collapseWhitespace: true}))
     )
-    .pipe(gulp.dest(paths.html.dest))
+    .pipe(gulp.dest(paths.pages.dest))
     .pipe(reload({stream: true}));
 });
 
@@ -120,49 +124,43 @@ gulp.task('image-min', [], function () {
 // DEST TASKS
 // ******************************************
 
-gulp.task('tag', ['html'], function() {
-  return gulp.src(paths.html.dest + '*.html')
-    .pipe($.replace(/vx.x.x/g, pjson.version))
-    .pipe(gulp.dest(paths.html.dest));
+gulp.task('tag', ['pages'], function() {
+  return gulp.src(paths.pages.dest + 'default.hbs')
+    .pipe($.replace(/vx.x.x/g, pjson.name + pjson.version))
+    .pipe(gulp.dest(paths.pages.dest));
 });
 
 // ******************************************
 // COPY TASKS
 // ******************************************
 
-gulp.task('copy-fonts', [], function() {
-  return gulp.src(paths.fonts.src)
-    .pipe(gulp.dest(paths.fonts.dest));
-});
-
-gulp.task('copy-icons', [], function() {
-  return gulp.src(['./app/assets/icons/**'])
-    .pipe(gulp.dest(basePaths.dest));
+gulp.task('copy-assets', [], function() {
+  return gulp.src(paths.assets.src)
+    .pipe(gulp.dest(paths.assets.dest));
 });
 
 gulp.task('copy-extras', function () {
   return gulp.src([
       'package.json',
       'README.md',
-      'LICENSE',
-      './app/assets/**/*.hbs'], {dot: true})
+      'LICENSE'], {dot: true})
     .pipe(gulp.dest(basePaths.dest));
 });
 
-// Build the sitemap
-gulp.task('sitemap', function () {
-  return gulp.src(paths.html.src)
-    .pipe($.sitemap({
-        siteUrl: 'http://www.webyousoon.com',
-        mappings: [{
-          pages: ['*.html'],
-          changefreq: 'monthly',
-          priority: 1,
-          lastmod: Date.now()
-        }]
-    }))
-    .pipe(gulp.dest(basePaths.dest));
-});
+// // Build the sitemap
+// gulp.task('sitemap', function () {
+//   return gulp.src(paths.html.src)
+//     .pipe($.sitemap({
+//         siteUrl: 'http://www.webyousoon.com',
+//         mappings: [{
+//           pages: ['*.html'],
+//           changefreq: 'monthly',
+//           priority: 1,
+//           lastmod: Date.now()
+//         }]
+//     }))
+//     .pipe(gulp.dest(basePaths.dest));
+// });
 
 // ******************************************
 // DEV TASKS
@@ -176,7 +174,7 @@ gulp.task('serve', ['build'], function() {
         }
     });
 
-    gulp.watch(paths.html.src, ['html']);
+    gulp.watch(paths.pages.src, ['pages']);
     gulp.watch(paths.styles.src, ['css']);
     gulp.watch(paths.scripts.src, ['js']);
 });
@@ -185,7 +183,7 @@ gulp.task('serve', ['build'], function() {
 // MASTER TASKS
 // ******************************************
 
-gulp.task('build', ['copy-extras', 'copy-fonts', 'copy-icons', 'js', 'css', 'html', 'image-min', 'tag', 'sitemap']);
+gulp.task('build', ['copy-extras', 'copy-assets', 'js', 'css', 'pages', 'image-min', 'tag']);
 
 gulp.task('default', ['clean'], function () {
   gulp.start('build');
