@@ -168,11 +168,11 @@ gulp.task('copy-extras', function () {
 
 // Static server
 gulp.task('serve', ['build'], function() {
-    browserSync({
-        server: {
-            baseDir: basePaths.dest
-        }
-    });
+    // browserSync({
+    //     server: {
+    //         baseDir: basePaths.dest
+    //     }
+    // });
 
     gulp.watch(paths.pages.src, ['pages']);
     gulp.watch(paths.styles.src, ['css']);
