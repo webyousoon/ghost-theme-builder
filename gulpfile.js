@@ -126,7 +126,7 @@ gulp.task('image-min', [], function () {
 
 gulp.task('tag', ['pages'], function() {
   return gulp.src(paths.pages.dest + 'default.hbs')
-    .pipe($.replace(/vx.x.x/g, pjson.name + pjson.version))
+    .pipe($.replace(/vx.x.x/g, pjson.name + ' ' + pjson.version))
     .pipe(gulp.dest(paths.pages.dest));
 });
 
