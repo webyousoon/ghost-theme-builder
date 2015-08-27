@@ -1,0 +1,82 @@
+#teaser {
+  position: relative;
+  margin-top: 50px;
+  height: 270px;
+  font-family: $font-title;
+
+  div#teaser-text {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    background: rgba($color-first, $opacity-background);
+    color: $color-text-inverse;
+    > div#teaser-verbatim {
+      width: 50%;
+      font-size: 18px;
+      padding: $gutter-height-s $gutter-width-s;
+    }
+  }
+
+  div#teaser-device {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 92px;
+    height: 240px;
+    @include bg-img('mini-teaser-device', '.png');
+    z-index: 3;
+  }
+  
+  div#teaser-app {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    @include bg-img('mini-teaser-app', '.png');
+    width: 80px;
+    height: 140px;
+  }
+}
+
+@include mq(large) {
+
+  #teaser {
+    position: relative;
+    margin-top: 0;
+    max-width: 100%;
+    height: 540px;
+    @include bg-img('teaser-bg', '.png');
+
+    div#teaser-text {
+      > div#teaser-verbatim {
+        font-size: 48px;
+        line-height: 85px;
+      }
+    }
+
+    div#teaser-device {
+      position: absolute;
+      right: 1.66666%;
+      width: 251px;
+      height: 460px;
+      @include bg-img('teaser-device', '.png');
+    }
+
+    div#teaser-app {
+      position: absolute;
+      left: 16px;
+      top: 134px;
+      @include bg-img('teaser-app', '.png');
+      width: 218px;
+      height: 326px;
+    }
+  }
+}
+
+@include mq(xlarge) {
+  #teaser {
+    width: $max-width-screen;
+    height: $max-height-screen;
+  }
+}
+

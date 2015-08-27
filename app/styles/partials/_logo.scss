@@ -1,0 +1,20 @@
+
+// @include logo(3px);
+@include logo(2.75px);
+#logo {
+  position: fixed;
+  top: 0;
+  margin: 8px $gutter-width-s;
+}
+
+@include mq(large) {
+
+  @include logo(8px);
+
+  #logo {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 24px auto;
+  }
+}

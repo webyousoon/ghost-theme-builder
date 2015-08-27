@@ -1,0 +1,115 @@
+
+
+header#banner {
+  // position: relative;
+}
+
+#navigation {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 50px;
+  line-height: 32px;
+  // background: rgba($color-white, 0.5);
+  background: $color-white;
+  border-bottom: 2px solid $color-first-annex;
+  text-align: right;
+  z-index: 4;
+
+  a {
+    display: inline-block;
+    font-size: 18px;
+    padding: 8px 16px 8px 16px;
+    // padding: 8px 16px 8px 0;
+    text-transform: uppercase;
+  }
+
+  #btn-menu-toggle {
+    display: block;
+  }
+
+  #menu-toggle.on + #menu-hover,
+  #menu-hover {
+    transition: all 0.7s ease-in-out;
+    a {
+      display: block;
+      color: $color-white;
+      // &#link-contactus {
+      //   color: $color-second;
+      // }
+    }
+  }
+
+  #menu-toggle.on + #menu-hover {
+    margin-top: 2px;
+  }
+
+  #menu-toggle.on + #menu-hover {
+    background: rgba($color-first-annex, $opacity-background);
+  }
+
+  #link-contactus {
+    // background: rgba($color-first-annex, $opacity-background);
+  }
+
+
+  #menu-hover {
+    background: $color-white;
+    margin-top: -480px;
+  }
+}
+
+// QUICK HACK !
+@media screen and (min-width: $screen-s) and (max-width: $screen-m - 1) {
+  nav .col-half,
+  nav .col-half + .col-half {
+    float: none;
+    width: 100%;
+  }
+}
+
+@include mq(large) {
+  #navigation {
+    position: relative;
+    text-align: left;
+    line-height: 64px;
+    border-bottom: 0;
+    height: 64px;
+
+    .link-toggle {
+      display: inherit;
+    }
+    #menu-toggle {
+      display: none;
+    }
+
+    #menu-toggle.on + #menu-hover,
+    #menu-hover {
+      display: block;
+      // transition: all 0.5s ease-out;
+      background: $color-white;
+      color: red;
+      margin-top: 0;
+      a {
+        display: inline-block;
+        color: $color-first;
+        padding: 0;
+        // padding: 0 16px;
+        &:hover {
+          color: $color-first-annex;
+        }
+      }
+      a + a {
+        padding: 0 16px;
+      }
+      a#link-contactus {
+        color: $color-second;
+        right: $gutter-width-s;
+        &:hover {
+          color: $color-second-annex;
+        }
+      }
+    }
+  }
+}

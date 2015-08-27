@@ -1,0 +1,100 @@
+#calltoaction {
+
+
+  padding-bottom: $gutter-height-l;
+  padding-top: $gutter-height-xl;
+
+
+  position: relative;
+  background: $color-second;
+  color: $color-second-annex;
+
+  // background: $color-gray-lightest;
+  // background: $color-white;
+  // color: $color-first-annex;
+  // color: $color-first;
+  // font-family: $font-handwriting;
+  .contact {
+    font-size: 18px;
+    @media screen and (min-width: $screen-m) {
+      font-size: 20px;
+    }
+    b {
+      color: $color-second-darkest;
+      // color: $color-gray-darkest;
+    }
+  }
+
+  
+  .small-teaser-contact {
+    font-size: 32px;
+    line-height: 20px;
+    position: relative;
+    i {
+      font-size: 108px;
+    }
+    .picture {
+      position: absolute;
+      top: -70px;
+      right: 0;
+      text-align: center;
+      @media screen and (min-width: $screen-m) {
+        text-align: right;
+      }
+    }
+  }
+  .big-teaser-contact {
+    font-size: 48px;
+    line-height: 64px;
+  }
+}
+
+@include mq(large) {
+  #calltoaction {
+    padding-top: $gutter-height-l;
+
+    .contact {
+      font-size: 24px;
+      line-height: 32px;
+      i {
+        font-size: 32px;
+      }
+      // position: relative;
+      // span, b {
+      //   margin-left: $gutter-width-l;
+      //   padding-left: 0;
+      // }
+      // i {
+      //   font-size: 46px;
+      //   position: absolute;
+      // }
+    }
+
+    ul.contact li {
+      margin-top: 48px;
+    }
+
+    div#calltoaction-device {
+      position: absolute;
+      left: 16px;
+      top: 0;
+      @include bg-img('calltoaction-device', '.png');
+      // background: find-img('calltoaction-device.png') no-repeat;
+      width: 238px;
+      height: 235px;
+
+      z-index: 3;
+    }
+    
+    div#calltoaction-app {
+      position: absolute;
+      left: 10px;
+      top: 0;
+      @include bg-img('calltoaction-app', '.png');
+      // background: find-img('calltoaction-app.png') no-repeat;
+      width: 218px;
+      height: 182px;
+    }
+
+  }
+}
