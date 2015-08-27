@@ -25,12 +25,12 @@ var paths = {
       dest: basePaths.dest
   },
   images: {
-      src: basePaths.src + 'assets/img/**',
+      src: basePaths.src + 'img/**',
       dest: basePaths.dest + 'assets/img/'
   },
   assets: {
-      src: [basePaths.src + 'assets/fonts', basePaths.src + 'assets/icons'],
-      dest: basePaths.dest + 'assets'
+      src: [basePaths.src + 'assets/**'],
+      dest: basePaths.dest + 'assets/'
   },
   scripts: {
       src: basePaths.src + 'scripts/**/*.js',
