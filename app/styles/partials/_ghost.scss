@@ -1,5 +1,78 @@
-.post-title {
-  > a {
-    color: purple;
+.page-title {
+  display: none;
+}
+
+.page-description {
+  color: $color-first;
+  // font-family: $font-handwriting;
+  // font-size: 64px;
+}
+
+$color-post-border: #CFD8DC;
+
+.post {
+  border: 1px solid $color-post-border;
+  display: block;
+  header {
+    position: relative;
+  }
+  h3 {
+
+  }
+  > header, > section {
+    background: $color-light;
+  }
+  > section > h3,
+  > section > p,
+  > footer {
+    // border-left: 1px solid $color-post-border;
+    // border-right: 1px solid $color-post-border;
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+  > section, footer {
+  }
+  > footer,  {
+    // border-bottom: 1px solid $color-post-border;
+    background: $color-gray-lightest;
+    padding-bottom: 4px;
+    padding-top: 4px;
+  }
+
+  .post-img {
+    display: block;
+    max-width: 100%;
+    width: 100%;
+    @include mq(medium) {
+      display: none;
+      // max-width: 50%;
+      // width: 50%;
+    }
+    @include mq(large) {
+      display: block;
+      // max-width: 100%;
+      // width: 100%;
+    }
+  }
+
+  .post-date {
+    // position: absolute;
+    // left: 0;
+    // top: 0;
+    // right: 0;
+    // bottom: 0;
+    // background: rgba($color-first, $opacity-background);
+    background: $color-first;
+    color: $color-first-annex;
+    font-family: $font-bold;
+    display: block;
+    padding: 4px 8px;
   }
 }
+
+.post-title {
+  > a {
+    // color: $color-gray-darker;
+  }
+}
+

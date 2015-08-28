@@ -11,8 +11,8 @@ header#banner {
   top: 0;
   height: 50px;
   line-height: 32px;
-  // background: rgba($color-white, 0.5);
-  background: $color-white;
+  // background: rgba($color-light, 0.5);
+  background: $color-light;
   border-bottom: 2px solid $color-first-annex;
   text-align: right;
   z-index: 4;
@@ -34,7 +34,7 @@ header#banner {
     transition: all 0.7s ease-in-out;
     a {
       display: block;
-      color: $color-white;
+      color: $color-light;
       // &#link-contactus {
       //   color: $color-second;
       // }
@@ -55,7 +55,7 @@ header#banner {
 
 
   #menu-hover {
-    background: $color-white;
+    background: $color-light;
     margin-top: -480px;
   }
 }
@@ -88,7 +88,7 @@ header#banner {
     #menu-hover {
       display: block;
       // transition: all 0.5s ease-out;
-      background: $color-white;
+      background: $color-light;
       color: red;
       margin-top: 0;
       a {

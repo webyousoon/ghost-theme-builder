@@ -12,10 +12,14 @@
 @import "partials/footer";
 @import "partials/404";
 @import "partials/ghost";
+@import "partials/news";
+@import "partials/services";
 
 body {
-  // background: $color-white;
+  // background: $color-light;
   background: $color-gray-lightest;
+  // background: $color-first-annex;
+  // background: $color-gray-darkest;
   color: $color-text;
 
   font-family: $font-text;
@@ -35,7 +39,10 @@ a {
   color: $color-first-annex;
   font-family: $font-title;
   text-decoration: none;
-  transition: all 0.5s ease-out;
+  transition: all 0.3s ease-out;
+  &:hover {
+    color: $color-first;
+  }
 }
 
 b {
@@ -92,39 +99,34 @@ li i + span {
 }
 
 .board {
-  section {
+  .info, .post {
     margin-top: $gutter-height-l;
   }
   header {
     position: relative;
   }
   header > i {
-    color: $color-gray-lightest;
+    color: $color-gray-lighter;
     font-size: 48px;
     position: absolute;
     right: 0;
     top: 12px;
     // z-index: 1;
   }
-  h1 {
-    color: $color-gray-lightest;
+  h2 {
+    color: $color-gray-lighter;
     font-size: 36px;
     text-align: center;
     text-transform: uppercase;
   }
-  h2 {
-    border-top: 2px solid $color-first;
-    // color: red;
+  h3 {
     color: $color-gray-darker;
     font-size: 24px;
-    // margin-top: $gutter-height-l;
-    padding-top: $gutter-height-s;
-    // z-index: 2;
   }
 }
 @include mq(large) {
   .board {
-    section {
+    .info, .post {
       margin-top: 0;
     }
   }
@@ -146,7 +148,7 @@ li i + span {
   color: $color-first;
 }
 .focus-inverse {
-  color: $color-white;
+  color: $color-light;
 }
 
 .container {
