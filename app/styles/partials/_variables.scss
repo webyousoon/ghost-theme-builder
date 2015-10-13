@@ -2,6 +2,8 @@
 $color-light: #FFFFFF;
 $color-dark: #000000;
 
+$color-light-darker: #F5F5F5;
+
 $color-gray-neutral-lightest: #E0E0E0;
 $color-gray-neutral-lighter: #757575;
 $color-gray-neutral-medium: #616161;
@@ -14,11 +16,11 @@ $color-gray-blue-medium: #78909C;
 $color-gray-blue-darker: #455A64;
 $color-gray-blue-darkest: #263238;
 
-$color-gray-lightest: $color-gray-blue-lightest;
-$color-gray-lighter: $color-gray-blue-lighter;
-$color-gray-medium: $color-gray-blue-medium;
-$color-gray-darker: $color-gray-blue-darker;
-$color-gray-darkest: $color-gray-blue-darkest;
+$color-gray-lightest: $color-gray-neutral-lightest;
+$color-gray-lighter: $color-gray-neutral-lighter;
+$color-gray-medium: $color-gray-neutral-medium;
+$color-gray-darker: $color-gray-neutral-darker;
+$color-gray-darkest: $color-gray-neutral-darkest;
 
 $color-purple: #4A148C;
 $color-blue: #4A90E2;

@@ -1,5 +1,6 @@
 
-<header id="banner" role="banner">
+
+<header id="banner" role="banner" class="row">
   <div id="logo">
     {{!-- {{#if @blog.logo}}<a class="blog-logo" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="{{@blog.title}}" /></a>{{/if}} --}}
   </div>
@@ -9,21 +10,18 @@
     </div>
     <div id="menu-hover">
       <div class="col-half">
-        <a id="link-values" class="link-toggle" href="#news">Actualité</a>
         <a id="link-services" class="link-toggle" href="#services">Services</a>
+        <a id="link-services" class="link-toggle" href="#values">Valeurs</a>
       </div>
       <div class="col-half align-right">
         <a id="link-contactus" class="link-toggle" href="#calltoaction">Contact</a>
       </div>
     </div>
   </nav>
-</header>
+  <div class="col-single">
+    <h2 class="blog-title">Blog</h2>
+  </div>
+  <div class="col-double">
 
-<section id="teaser">
-  <div id="teaser-device">
-    <div id="teaser-app"></div>
   </div>
-  <div id="teaser-text">
-    <div id="teaser-verbatim">Applications<br/>web & mobiles<br/>conçues pour vous</div>
-  </div>
-</section>
+</header>

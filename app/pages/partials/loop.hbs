@@ -3,36 +3,38 @@
     {{pagination}}
 </div> --}}
 
-<section id="news" class="board row">
-
-  <div class="col-single">
-    <h2>Actualité</h2>
-    <p class="focus">Nous proposons des services dans toutes les étapes clés pour réaliser des applications web et mobiles.</p>
-    {{! Previous/next page links - displayed on every page }}
-    {{pagination}}
-  </div>
+<section id="news" class="post-summary board row">
 
   {{! This is the post loop - each post will be output using this markup }}
   {{#foreach posts}}
   <div class="col-single">
       <article class="{{post_class}}">
           <header>
+              <h3 class="post-title"><a href="{{url}}">{{{title}}}</a></h3>
               {{#if image}}<img class="post-img" src={{image}} />{{/if}}
           </header>
-          <section class="post-excerpt">
+          <section>
+            <section class="post-meta">
               <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD/MM/YYYY"}}</time>
-              <h3 class="post-title"><a href="{{url}}">{{{title}}}</a></h3>
-              <p>{{excerpt words="26"}} <a class="read-more" href="{{url}}">&raquo;</a></p>
+            </section>
+            <p class="post-excerpt">{{excerpt words="26"}}</p>
+            <p class="post-excerpt-link"><a href="{{url}}"><i class="icon icon-more-circle"></i> Lire la suite</a></p>
+            {{!-- <p class="read-more"><a href="{{url}}">+</a></p> --}}
           </section>
-          <footer class="post-meta">
-  {{!--             {{#if author.image}}<img class="author-thumb" src="{{author.image}}" alt="{{author.name}}" nopin="nopin" />{{/if}}
-              {{author}} --}}
-              <i class="icon icon-tags"></i> {{tags}}
-          </footer>
+{{!--           <footer class="post-author">
+            {{#if author.image}}<img class="author-thumb" src="{{author.image}}" alt="{{author.name}}" nopin="nopin" />{{/if}}
+            {{author}}
+          </footer> --}}
 
       </article>
   </div>
+  <div class="quick-dirty-clearfix"></div>
   {{/foreach}}
+
+  <div style="clear: both;"></div>
+
+  {{pagination}}
+
 </section>
 
 

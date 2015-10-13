@@ -36,12 +36,12 @@ body {
 }
 
 a {
-  color: $color-first-annex;
+  color: $color-first;
   font-family: $font-title;
   text-decoration: none;
   transition: all 0.3s ease-out;
   &:hover {
-    color: $color-first;
+    color: $color-first-annex;
   }
 }
 
@@ -88,7 +88,12 @@ li i + span {
 
 
 
-
+.title-focus {
+  color: $color-gray-lightest;
+  font-size: 36px;
+  text-align: center;
+  text-transform: uppercase;
+}
 
 
 .bigger {
