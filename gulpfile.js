@@ -104,9 +104,9 @@ gulp.task('css', function () {
 gulp.task('pages', function() {
   return gulp.src(paths.pages.src)
     .pipe($.preprocess({context: {NODE_ENV: production?'production':''}}))
-    .pipe($.if(production,
-      $.htmlmin({collapseWhitespace: true}))
-    )
+    // .pipe($.if(production,
+    //   $.htmlmin({collapseWhitespace: true}))
+    // )
     .pipe(gulp.dest(paths.pages.dest))
     .pipe(reload({stream: true}));
 });
@@ -127,14 +127,24 @@ gulp.task('image-min', [], function () {
 // ******************************************
 
 gulp.task('tag', ['pages'], function() {
-  return gulp.src(paths.pages.dest + 'default.hbs')
+  return gulp.src(paths.pages.dest + 'partials/footer.hbs')
     .pipe($.replace(/vx.x.x/g, pjson.name + ' ' + pjson.version))
-    .pipe(gulp.dest(paths.pages.dest));
+    .pipe(gulp.dest(paths.pages.dest + 'partials'));
 });
 
 // ******************************************
 // COPY TASKS
 // ******************************************
+
+// gulp.task('copy-fonts', [], function() {
+//   return gulp.src(['./app/assets/css/fonts/**'])
+//     .pipe(gulp.dest('./public/css/fonts'));
+// });
+
+// gulp.task('copy-icons', [], function() {
+//   return gulp.src(['./app/assets/icons/**'])
+//     .pipe(gulp.dest(basePaths.dest));
+// });
 
 gulp.task('copy-assets', [], function() {
   return gulp.src(paths.assets.src)
@@ -168,14 +178,7 @@ gulp.task('copy-extras', function () {
 // DEV TASKS
 // ******************************************
 
-// Static server
-gulp.task('serve', ['build'], function() {
-    // browserSync({
-    //     server: {
-    //         baseDir: basePaths.dest
-    //     }
-    // });
-
+gulp.task('watch', ['build'], function() {
     gulp.watch(paths.pages.src, ['pages']);
     gulp.watch(paths.styles.src, ['css']);
     gulp.watch(paths.scripts.src, ['js']);
