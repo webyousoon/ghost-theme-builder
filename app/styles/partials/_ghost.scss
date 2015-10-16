@@ -298,6 +298,8 @@ $color-post-border: #CFD8DC;
     }
     .author-thumb {
       @include circle(64px);
+      display: inline;
+      padding: 0;
       position: absolute;
       right: 0;
     }
