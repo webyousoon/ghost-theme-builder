@@ -96,6 +96,15 @@ $color-post-border: #CFD8DC;
   h1, h2, h3, h4, h5, h6 {
     color: $color-gray-darker;
   }
+  h2 {
+    padding-top: $gutter-height-l;
+  }
+  h3 {
+    padding-top: $gutter-height-m;
+  }
+  h4 {
+    padding-top: $gutter-height-s;
+  }
 }
 
 .post-summary {
@@ -204,8 +213,18 @@ $color-post-border: #CFD8DC;
 
 .post-page {
 
-  img {
+  a {
+    font-family: $font-text;
+  }
+
+  img,
+  .gist {
+    display: block;
     max-width: 100%;
+    padding: $gutter-height-m 0;
+  }
+  img {
+    margin: 0 auto;
   }
 
   background: $color-light;
@@ -230,14 +249,14 @@ $color-post-border: #CFD8DC;
     }
   }
   .post-date {
-    background: $color-gray-lightest;
-    color: $color-gray-darker;
+    // background: $color-gray-lightest;
+    color: $color-gray-lighter;
     display: inline-block;
     font-family: $font-bold;
-    font-size: 24px;
-    line-height: 24px;
-    margin-top: 24px;
-    padding: $gutter-height-s $gutter-width-s;
+    font-size: 16px;
+    line-height: 16px;
+    margin-top: 16px;
+    padding-bottom: $gutter-height-m;
     // margin-bottom: $gutter-height-l;
     // margin-top: $gutter-height-l;
     text-align: center;

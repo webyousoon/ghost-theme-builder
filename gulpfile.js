@@ -8,7 +8,8 @@ var browserSync = require('browser-sync');
 var reload = browserSync.reload;
 var $ = require('gulp-load-plugins')({
   rename: {
-    'gulp-minify-css': 'minifycss'
+    'gulp-minify-css': 'minifycss',
+    'gulp-sourcemaps': 'sourcemaps'
   }
 });
 
@@ -84,9 +85,11 @@ gulp.task('js', function() {
 gulp.task('css', function () {
   // keep stream CSS after Sass pre-processing
   var appFile = gulp.src(paths.styles.src)
+    .pipe($.sourcemaps.init())
     .pipe($.sass()).on('error', function logError(error) {
       console.error(error);
-    });
+    })
+    .pipe($.sourcemaps.write());
   // concat and minify CSS files and stream CSS
   return es.concat(gulp.src('./vendor/styles/*.css'), appFile)
     .pipe($.concat('screen.css'))
