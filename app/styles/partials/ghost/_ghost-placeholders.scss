@@ -1,0 +1,14 @@
+%common-post-date {
+  &::before {
+    @extend %font-icon;
+    content: 'Z';
+    padding-right: 8px;
+  }
+  // background: $color-second;
+  // color: $color-second-darkest;
+  background: $color-gray-lightest;
+  color: $color-gray-medium;
+  display: block;
+  font-family: $font-bold;
+  text-transform: uppercase;
+}

@@ -1,3 +1,26 @@
+@mixin pxtorem($font-size, $font-size-base) {
+
+}
+
+@mixin text($font-size, $font-size-base, $line-height) {
+  @include font-size($font-size, $font-size-base);
+  @include line-height($font-size, $font-size-base, $line-height);
+}
+
+@mixin font-size($font-size, $font-size-base) {
+  // px
+  font-size: $font-size;
+  // rem
+  font-size: pxtorem($font-size, $font-size-base);
+}
+
+@mixin line-height($font-size, $font-size-base, $line-height) {
+  // px
+  line-height: $font-size * $line-height;
+  // rem
+  line-height: pxtorem($font-size, $font-size-base) * $line-height;
+}
+
 
 @mixin clearfix() {
     content: '';
@@ -15,13 +38,13 @@
   @if $size == small {
       @media screen and (max-width: $screen-s) { @content; }
   }
-  @if $size == medium {
+  @if $size == medium or $size == m {
       @media screen and (min-width: $screen-s + 1) { @content; }
   }
-  @if $size == large {
+  @if $size == large or $size == l {
       @media screen and (min-width: $screen-m) { @content; }
   }
-  @if $size == xlarge {
+  @if $size == xlarge  or $size == xl {
       @media screen and (min-width: $screen-l) { @content; }
   }
 }
@@ -128,7 +151,7 @@
       // margin: 0 auto;
       // top: 16px;
       text-align: center;
-      
+
     }
 
     &.web {
@@ -163,7 +186,7 @@
     &.soon {
     // position: absolute;
       // left: 15px;
-      top: $size * 18;   
+      top: $size * 18;
     }
   }
 }
@@ -198,7 +221,7 @@
 //   &.web {
 //   position: absolute;
 //     left: 23px;
-//     top: 16px;   
+//     top: 16px;
 //   }
 //   &.you {
 //   position: absolute;
@@ -211,11 +234,11 @@
 //     text-transform: none;
 
 //     left: 16px;
-//     top: 14px;   
+//     top: 14px;
 //   }
 //   &.soon {
 //   position: absolute;
 //     left: 15px;
-//     top: 70px;   
+//     top: 70px;
 //   }
 // }

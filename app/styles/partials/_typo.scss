@@ -1,0 +1,67 @@
+/* BASE */
+
+body {
+  background: $color-gray-lightest;
+  color: $color-text;
+
+  font-family: $font-text;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  @include text($font-size-base-s, $font-size-base-s, $line-height-s);
+  @include mq(m) {
+    @include text($font-size-base-m, $font-size-base-m, $line-height-m);
+  }
+  @include mq(l) {
+    @include text($font-size-base-l, $font-size-base-l, $line-height-l);
+  }
+  @include mq(xl) {
+    @include text($font-size-base-xl, $font-size-base-xl, $line-height-xl);
+  }
+}
+
+/* TITRES */
+
+$small-baseline: 10px;
+$big-baseline: 20px;
+
+$titles-font-size: (
+  h1: 36px,
+  h2: 30px,
+  h3: 24px,
+  h4: 18px,
+  h5: 14px,
+  h6: 12px
+);
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-title;
+}
+
+@each $title, $font-size in $titles-font-size {
+  #{$title}, .#{$title} {
+
+    @include font-size($font-size, $font-size-base-s);
+    @include mq(m) {
+      @include font-size($font-size, $font-size-base-m);
+    }
+    @include mq(l) {
+      @include font-size($font-size, $font-size-base-l);
+    }
+    @include mq(xl) {
+      @include font-size($font-size, $font-size-base-xl);
+    }
+
+    @include line-height($font-size, $font-size-base-s, 1);
+    @include mq(m) {
+      @include line-height($font-size, $font-size-base-m, 1);
+    }
+    @include mq(l) {
+      @include line-height($font-size, $font-size-base-l, 1);
+    }
+    @include mq(xl) {
+      @include line-height($font-size, $font-size-base-xl, 1);
+    }
+
+  }
+}
