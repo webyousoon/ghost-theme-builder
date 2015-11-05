@@ -95,7 +95,9 @@ $icon-list: (
   ("mark-top", "V"),
   ("mark-bottom", "W"),
   ("mark-left", "X"),
-  ("mark-right", "Y")
+  ("mark-right", "Y"),
+  ("pen", "Z"),
+  ("write-pen", "0")
 );
 
 @each $name, $content in $icon-list {
