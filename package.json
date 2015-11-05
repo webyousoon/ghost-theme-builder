@@ -2,7 +2,7 @@
   "name": "webyousoon",
   "description": "Build easily a theme for Ghost platform with Gulp",
   "author": "Alvin Berthelot",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "repository": {
     "type": "git",
     "url": "https://github.com/webyousoon/ghost-theme-builder"
