@@ -6,14 +6,17 @@
     font-family: $font-text;
   }
 
-  img,
-  .gist {
+  img {
     display: block;
     max-width: 100%;
     padding: $gutter-height-s 0;
   }
   img {
     margin: 0 auto;
+  }
+
+  .gist {
+    margin: 10px;
   }
 
   background: $color-light;
@@ -25,6 +28,13 @@
 
   .post {
     margin-bottom: $gutter-height-xl;
+
+    h2 {
+      border-bottom: 1px solid $color-second;
+      padding-bottom: $gutter-height-s;
+      margin-top: $gutter-height-s;
+    }
+
   }
   .post-title {
     @extend .h1;
