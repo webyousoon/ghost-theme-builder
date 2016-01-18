@@ -1,0 +1,66 @@
+//
+// Variables for em / rem use
+//
+
+$base_px: 16px; //set to the most common base px size used in browsers, should generally be left at default
+
+$toRems: (1px / $base_px) + 0rem; //allows you to set values as the default px size to target, which is then converted into scalable rem values.
+
+$toEms: (1px / $base_px) + 0em; //same as above, but with em values
+
+$body-font: "Source Sans Pro", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$heading-font: "Montserrat", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$nav-font: "Montserrat", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+$body-background: #f5f5f5;
+$header-background: #314e69;
+$footer-background: #111111;
+
+$top-bar-background: shade($header-background, 30%);
+$top-bar-color: #ffffff;
+$top-bar-link-color: #ffffff;
+$top-bar-link-color: hover;
+
+$nav-background: transparent;
+$nav-background-hover: $header-background;
+$nav-color: lighten($header-background, 30%);
+$nav-color-hover: #fff;
+
+$heading-color: #000000;
+$heading-color-hover: #333333;
+
+$text-color: #333333;
+
+$link-color: #cca20f;
+$link-color-hover: shade($link-color, 20%);
+
+$button-background: $link-color;
+$button-background-hover: #000000;
+$button-color: #ffffff;
+$button-color-hover: #ffffff;
+
+$feat-strip-color: #000000;
+$feat-strip-background: #f7c928;
+
+$divider-color: #87a2bd;
+$divider-gray: #dddddd;
+
+// Social colors
+
+$color-facebook: #3b5998;
+$color-twitter: #55acee;
+$color-google-plus: #d34836;
+$color-youtube: #cd201f;
+$color-vimeo: #1ab7ea;
+$color-yahoo: #7B0099;
+$color-vine: #00b488;
+$color-flickr: #0063dc;
+$color-instagram: #3f729b;
+$color-tumblr: #35465c;
+$color-linkedin: #0077b5;
+$color-pinterest: #bd081c;
+$color-github: #4183c4;
+$color-dribbble: #ea4c89;
+$color-rss: #f26522;
+$color-social: #666666;
+$color-social-hover: #000000;

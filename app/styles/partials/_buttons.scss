@@ -1,0 +1,133 @@
+
+@mixin button-gen ($btn-bg: $button-background,
+	$btn-bg-hover: $button-background-hover,
+	$btn-color: $button-color,
+	$btn-color-hover: $button-color-hover) {
+		background-color: $btn-bg;
+		color: $btn-color;
+		text-decoration: none;
+
+		&:hover {
+			background-color: $btn-bg-hover;
+			color: $btn-color-hover;
+			text-decoration: none;
+		}
+}
+
+.button {
+	@include button-gen();
+	display: inline-block;
+	padding: 7px 12px;
+	border: 0;
+	@include border-radius(5px);
+
+	&:not(.button-social) > i.mdi:first-child {
+		margin-right: 5px;
+	}
+
+	// Button variants
+
+	&.button-social {
+		width: 36px;
+		height: 36px;
+		padding: 0;
+		line-height: 36px;
+		color: #ffffff;
+		background-color: $color-social;
+		text-align: center;
+		@include border-radius(50%);
+
+		&:hover {
+			color: #ffffff;
+			background-color: $color-social-hover;
+		}
+
+		i {
+			line-height: 36px;
+		}
+	}
+
+	// Social media buttons
+
+	&.button-twitter {
+		@include button-gen( $color-twitter, $button-background-hover, #ffffff, $button-color-hover );
+	}
+
+	&.button-facebook {
+		@include button-gen( $color-facebook, $button-background-hover, #ffffff, $button-color-hover );
+	}
+
+	&.button-google-plus {
+		@include button-gen( $color-google-plus, $button-background-hover, #ffffff, $button-color-hover );
+	}
+
+	&.button-linkedin {
+		@include button-gen( $color-linkedin, $button-background-hover, #ffffff, $button-color-hover );
+	}
+
+	&.button-pinterest {
+		@include button-gen( $color-pinterest, $button-background-hover, #ffffff, $button-color-hover );
+	}
+
+	&.button-youtube {
+		@include button-gen( $color-youtube, $button-background-hover, #ffffff, $button-color-hover );
+	}
+
+	&.button-vimeo {
+		@include button-gen( $color-vimeo, $button-background-hover, #ffffff, $button-color-hover );
+	}
+
+	&.button-vine {
+		@include button-gen( $color-vine, $button-background-hover, #ffffff, $button-color-hover );
+	}
+
+	&.button-flickr {
+		@include button-gen( $color-flickr, $button-background-hover, #ffffff, $button-color-hover );
+	}
+
+	&.button-instagram {
+		@include button-gen( $color-instagram, $button-background-hover, #ffffff, $button-color-hover );
+	}
+
+	&.button-tumblr {
+		@include button-gen( $color-tumblr, $button-background-hover, #ffffff, $button-color-hover );
+	}
+
+	&.button-dribbble {
+		@include button-gen( $color-dribbble, $button-background-hover, #ffffff, $button-color-hover );
+	}
+
+	&.button-yahoo {
+		@include button-gen( $color-yahoo, $button-background-hover, #ffffff, $button-color-hover );
+	}
+
+	&.button-github {
+		@include button-gen( $color-github, $button-background-hover, #ffffff, $button-color-hover );
+	}
+
+	&.button-rss {
+		@include button-gen( $color-rss, $button-background-hover, #ffffff, $button-color-hover );
+	}
+}
+
+.social-icons {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+
+	li {
+		float: left;
+		margin: 0 5px 5px 0;
+		padding: 0;
+
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+
+	&:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+}

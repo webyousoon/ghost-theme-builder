@@ -1,0 +1,201 @@
+
+.widget {
+	margin-top: 45px;
+
+	&:first-of-type {
+		margin-top: 0;
+	}
+
+	.widget-title {
+		padding-bottom: 10px;
+		margin-bottom: 0;
+		border-bottom: 2px solid $divider-color;
+	}
+
+	.widget-list {
+		margin: 0;
+		padding: 0;
+		list-style-type: none;
+
+		li {
+			padding: 10px 0;
+			border-bottom: 1px solid $divider-gray;
+
+			&:last-child {
+				border-bottom: 0;
+			}
+		}
+	}
+
+	.widget-content {
+		margin-top: 15px;
+		margin-bottom: 15px;
+	}
+
+	a:not(.button) {
+		color: $heading-color;
+		/* These are technically the same, but use both */
+		overflow-wrap: break-word;
+		word-wrap: break-word;
+
+		-ms-word-break: break-all;
+		/* This is the dangerous one in WebKit, as it breaks things wherever */
+		word-break: break-all;
+		/* Instead use this non-standard one: */
+		word-break: break-word;
+
+		&:hover {
+			color: $heading-color-hover;
+		}
+	}
+
+	&.widget-bordered {
+		padding: 5px 15px;
+		border: 1px solid $divider-gray;
+		@include border-radius(5px);
+	}
+
+	// Twitter widget
+
+	&#widget-twitter {
+		.tweet {
+			margin-bottom: 10px!important;
+
+			a {
+				color: $link-color;
+
+				&:hover {
+					color: $link-color-hover;
+				}
+			}
+		}
+		.timePosted {
+			margin-bottom: 0;
+			font-size: 14 * $toRems;
+			color: #888888;
+
+			a {
+				color: #888888;
+			}
+		}
+
+		.twitter-info {
+			border-top: 1px solid $divider-gray;
+			padding: 15px 0;
+		}
+	}
+
+	// Weather widget
+
+	@font-face {
+		font-family: 'weather';
+		src: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/93/artill_clean_icons-webfont.eot');
+		src: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/93/artill_clean_icons-webfont.eot?#iefix') format('embedded-opentype'),
+		 url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/93/artill_clean_icons-webfont.woff') format('woff'),
+		 url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/93/artill_clean_icons-webfont.ttf') format('truetype'),
+		 url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/93/artill_clean_icons-webfont.svg#artill_clean_weather_iconsRg') format('svg');
+		font-weight: normal;
+		font-style: normal;
+	}
+
+	&#widget-weather {
+		padding-bottom: 30px;
+		color: #ffffff;
+		text-align: center;
+		background-color: $header-background;
+		background-image: url(../img/weather-background.jpg);
+		background-size: cover;
+		background-position: center;
+		@include border-radius(5px);
+
+		i {
+			color: #ffffff;
+			font-family: weather;
+			font-size: 150 * $toRems;
+			font-weight: normal;
+			font-style: normal;
+			line-height: 1;
+			text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.15);
+		}
+
+		.icon-0:before { content: ":"; }
+		.icon-1:before { content: "p"; }
+		.icon-2:before { content: "S"; }
+		.icon-3:before { content: "Q"; }
+		.icon-4:before { content: "S"; }
+		.icon-5:before { content: "W"; }
+		.icon-6:before { content: "W"; }
+		.icon-7:before { content: "W"; }
+		.icon-8:before { content: "W"; }
+		.icon-9:before { content: "I"; }
+		.icon-10:before { content: "W"; }
+		.icon-11:before { content: "I"; }
+		.icon-12:before { content: "I"; }
+		.icon-13:before { content: "I"; }
+		.icon-14:before { content: "I"; }
+		.icon-15:before { content: "W"; }
+		.icon-16:before { content: "I"; }
+		.icon-17:before { content: "W"; }
+		.icon-18:before { content: "U"; }
+		.icon-19:before { content: "Z"; }
+		.icon-20:before { content: "Z"; }
+		.icon-21:before { content: "Z"; }
+		.icon-22:before { content: "Z"; }
+		.icon-23:before { content: "Z"; }
+		.icon-24:before { content: "E"; }
+		.icon-25:before { content: "E"; }
+		.icon-26:before { content: "3"; }
+		.icon-27:before { content: "a"; }
+		.icon-28:before { content: "A"; }
+		.icon-29:before { content: "a"; }
+		.icon-30:before { content: "A"; }
+		.icon-31:before { content: "6"; }
+		.icon-32:before { content: "1"; }
+		.icon-33:before { content: "6"; }
+		.icon-34:before { content: "1"; }
+		.icon-35:before { content: "W"; }
+		.icon-36:before { content: "1"; }
+		.icon-37:before { content: "S"; }
+		.icon-38:before { content: "S"; }
+		.icon-39:before { content: "S"; }
+		.icon-40:before { content: "M"; }
+		.icon-41:before { content: "W"; }
+		.icon-42:before { content: "I"; }
+		.icon-43:before { content: "W"; }
+		.icon-44:before { content: "a"; }
+		.icon-45:before { content: "S"; }
+		.icon-46:before { content: "U"; }
+		.icon-47:before { content: "S"; }
+
+		p {
+			margin: 0;
+
+			&.weather-temp {
+				font-size: 60 * $toRems;
+				font-weight: 700;
+			}
+		}
+
+		.currently {
+			margin: 0 20px;
+		}
+	}
+
+	// Social widget
+
+	&#widget-social {
+		.button {
+			width: 100%;
+			margin-bottom: 5px;
+		}
+	}
+
+	// Newsletter widget
+
+	&#widget-newsletter {
+		#email {
+			width: 100%;
+			margin-bottom: 10px;
+		}
+	}
+}

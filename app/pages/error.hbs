@@ -8,30 +8,22 @@
 	<div id="wrapper" class="clearfix">
 
 		<div id="content">
-			{{#post}}
 			<article class="post">
 				<div class="row">
 					<div class="col-md-12">
-						<h1 class="page-title">{{title}}</h1>
+						<h1 class="page-title">Content not found</h1>
 					</div>
 				</div>
-
-				{{#if image}}
-				<div class="row">
-					<div class="post-image col-md-12"><img src="{{image}}" alt="{{title}}"></div>
-				</div>
-				<!-- / post image -->
-				{{/if}}
 
 				<div class="row">
 					<div class="col-md-12">
 						<div class="post-content">
-							{{content}}
+							<p>The content or page you are looking for was not found. Maybe you have the wrong address or it was moved.</p>
+							<p>Navigate to our <a href="{{@blog.url}}">home page</a> for a list of our most recent articles or use the navigation to discover content.</p>
 						</div>
 					</div>
 				</div>
 			</article>
-			{{/post}}
 			<!-- / post -->
 		</div>
 		<!-- / content -->

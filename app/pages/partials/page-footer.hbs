@@ -1,0 +1,19 @@
+<footer id="footer">
+	<div class="container">
+		<div class="back-top"><a href="#top"><i class="mdi mdi-arrow-up-bold-circle-outline"></i> Back to top</a></div>
+		<div class="row footer-wrapper">
+			<div class="col-md-8">
+				{{navigation}}
+				<div class="copyright">&copy; Copyright by {{@blog.title}}. All rights reserved.</div>
+			</div>
+			<div class="col-md-4 footer-logo text-right">
+				{{#if @blog.logo}}
+					<img src="{{@blog.logo}}" height="40" alt="{{@blog.title}}">
+				{{else}}
+					{{@blog.title}}
+				{{/if}}
+			</div>
+		</div>
+	</div>
+</footer>
+<!-- / footer -->

@@ -1,3 +1,5 @@
+'use strict';
+
 // dependances
 var gulp = require('gulp');
 var del = require('del');
@@ -6,6 +8,7 @@ var argv = require('yargs').argv;
 var pngquant = require('imagemin-pngquant');
 var browserSync = require('browser-sync');
 var reload = browserSync.reload;
+var sass = require('gulp-sass');
 var $ = require('gulp-load-plugins')({
   rename: {
     'gulp-minify-css': 'minifycss'
@@ -29,7 +32,9 @@ var paths = {
       dest: basePaths.dest + 'assets/img/'
   },
   assets: {
-      src: [basePaths.src + 'assets/fonts', basePaths.src + 'assets/icons'],
+      src: [
+        basePaths.src + 'assets/**'
+      ],
       dest: basePaths.dest + 'assets'
   },
   scripts: {
@@ -84,7 +89,11 @@ gulp.task('js', function() {
 gulp.task('css', function () {
   // keep stream CSS after Sass pre-processing
   var appFile = gulp.src(paths.styles.src)
-    .pipe($.sass());
+    .pipe(sass())
+    .on('error', sass.logError);
+
+
+
   // concat and minify CSS files and stream CSS
   return es.concat(gulp.src('./vendor/styles/*.css'), appFile)
     .pipe($.concat('screen.css'))

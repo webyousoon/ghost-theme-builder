@@ -1,0 +1,35 @@
+<header id="header">
+	<div id="top-bar">
+		<div class="container clearfix">
+			<ul>
+				<li><a href="/about-herald/">About</a></li>
+				<li><a href="/testing-the-404/">404 Page</a></li>
+			</ul>
+		</div>
+	</div>
+	<!-- / top bar -->
+
+	<div id="top">
+		<div class="container clearfix">
+			<div id="logo">
+				{{#if @blog.logo}}
+					<a href="{{@blog.url}}" title="{{@blog.title}}"><img src="{{@blog.logo}}" height="40" alt="{{@blog.title}}"></a>
+				{{else}}
+					<a href="{{@blog.url}}" title="{{@blog.title}}">{{@blog.title}}</a>
+				{{/if}}
+			</div>
+			{{> top-banner}}
+			{{! This includes the top-banner.hbs partial }}
+		</div>
+	</div>
+	<!-- / top -->
+
+	<nav id="nav">
+		<div class="container clearfix">
+			<a href="#" id="mobile-nav-trigger">Show Navigation</a>
+			{{navigation}}
+		</div>
+	</nav>
+	<!-- / navigation -->
+</header>
+<!-- / header -->

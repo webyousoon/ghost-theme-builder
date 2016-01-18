@@ -7,13 +7,10 @@
 <main id="main" class="container">
 	<div id="wrapper" class="clearfix">
 
-		<div id="content" class="content-2-col">
-			<div class="tag-info">
-				{{#tag}}<h3 class="tag-name">Browsing: {{name}}</h3>{{/tag}}
-			</div>
+		<div id="content" class="content-home">
 			<div class="row">
-				{{> loops/loop-2-col}}
-				{{! This includes the loops/loop-2-col.hbs partial }}
+				{{> loops/loop-home}}
+				{{! This includes the loops/loop-home.hbs partial }}
 			</div>
 			
 			{{pagination}}

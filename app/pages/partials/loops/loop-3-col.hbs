@@ -1,0 +1,23 @@
+{{#foreach posts}}
+	<article class="{{post_class}} col-sm-6 col-lg-4">
+		{{#if image}}
+		<div class="post-image">
+			<a href="{{url}}" class="post-image-link"><img src="{{image}}" alt="{{title}}"></a>
+			{{#if featured}}<span class="feat-strip">Featured</span>{{/if}}
+			{{#if tags}}
+			<ul class="post-tags">
+				{{#foreach tags}}
+				<li>
+					<a href="{{url}}" title="{{name}}" class="tag-{{id}}">{{name}}</a>
+				</li>  
+				{{/foreach}}
+			</ul>
+			{{/if}}
+		</div>
+		{{/if}}
+		<h2 class="post-title"><a href="{{url}}" title="{{title}}">{{title}}</a></h2>
+		<div class="post-meta">{{#author}}<span>By</span> <a href="{{url}}" title="{{name}}">{{name}}</a>, {{/author}} <time datetime="{{date published_at format="YYYY-MM-DD"}}">{{date published_at format="MMM DD, YYYY"}}</time></div>
+		<div class="post-excerpt">{{excerpt words="30"}}...</div>
+		<a href="{{url}}" title="{{title}}" class="read-more">Read more</a>
+	</article>
+{{/foreach}}

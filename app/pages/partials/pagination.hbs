@@ -1,0 +1,11 @@
+<nav class="pagination clearfix">
+	<span class="page-number">Page {{page}} of {{pages}}</span>
+	<div class="pagination-links">
+	{{#if prev}}
+		<a class="newer-posts" href="{{page_url prev}}">&larr; Newer</a>
+	{{/if}}
+	{{#if next}}
+		<a class="older-posts {{#if prev}}bordered{{/if}}" href="{{page_url next}}">Older &rarr;</a>
+	{{/if}}
+	</div>
+</nav>

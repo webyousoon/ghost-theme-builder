@@ -1,0 +1,129 @@
+
+html {
+	font-size: $base_px;
+}
+
+body {
+	font-family: $body-font;
+	font-weight: normal;
+	font-size: 16 * $toRems;
+	line-height: 1.4;
+	letter-spacing: -0.03em;
+	color: $text-color;
+
+	//-webkit-text-stroke-width: .05px;
+	//-webkit-text-stroke-color: white;
+	-webkit-font-smoothing:antialiased;
+}
+
+a {
+	color: $link-color;
+	@include transition(.25s);
+
+	&:hover {
+		color: $link-color-hover;
+	}
+}
+
+h1, h2, h3,
+h4, h5, h6 {
+	font-family: $heading-font;
+	font-weight: bold;
+	line-height: 1.2;
+	color: $heading-color;
+
+	a {
+		color: $heading-color;
+		text-decoration: none;
+
+		&:hover {
+			color: $heading-color-hover;
+			text-decoration: none;
+		}
+	}
+}
+
+h4, h5, h6 {
+	letter-spacing: 0;
+}
+
+h1 { font-size: 32 * $toRems; }
+h2 { font-size: 24 * $toRems; }
+h3 { font-size: 18 * $toRems; }
+h4 { font-size: 16 * $toRems; }
+h5 { font-size: 12 * $toRems; }
+h6 { font-size: 10 * $toRems; }
+
+h1.post-title {
+	font-size: 32 * $toRems;
+	margin-top: 0;
+	margin-bottom: 15px;
+}
+
+h2.post-title {
+	font-size: 24 * $toRems;
+}
+.post-content h1,
+.post-content h2,
+.post-content h3,
+.post-content h4,
+.post-content h5,
+.post-content h6 {
+	margin-bottom: 1.2rem;
+}
+
+.page-title {
+	padding-bottom: 10px;
+	margin-top: 0;
+	margin-bottom: 2rem;
+	border-bottom: 2px solid $divider-color;
+}
+
+p, ul, ol {
+	margin-bottom: 1.5em;
+}
+
+blockquote{
+	display:block;
+	background: #fff;
+	padding: 5px 20px 15px 50px;
+	margin: 0 0 20px;
+	position: relative;
+	font-family: Georgia, serif;
+	font-size: 18 * $toRems;
+	font-style: italic;
+	border: 0;
+	letter-spacing: 0;
+	color: #444444;
+}
+
+blockquote::before{
+	content: "\201C"; /*Unicode for Left Double Quote*/
+	font-family: Georgia, serif;
+	font-size: 60 * $toRems;
+	font-weight: bold;
+	font-style: normal;
+	color: $link-color;
+	position: absolute;
+	left: 0;
+	top: -8px;
+}
+
+blockquote::after{
+	/*Reset to make sure*/
+	content: "";
+}
+
+.post-content {
+	font-size: 18 * $toRems;
+}
+
+.read-more {
+	display: inline-block;
+	font-size: 14px;
+	font-family: $heading-font;
+	font-weight: bold;
+	margin-top: 10px;
+
+	&:hover { text-decoration: none; }
+}
