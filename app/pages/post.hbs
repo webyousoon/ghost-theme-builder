@@ -12,29 +12,30 @@
 			<article class="post">
 				<div class="row">
 					<div class="col-lg-4">
-						{{#if tags}}
-						<ul class="post-tags">
-							{{#foreach tags}}
-							<li>
-								<a href="{{url}}" title="{{name}}" class="tag-{{id}}">{{name}}</a>
-							</li>  
-							{{/foreach}}
-						</ul>
+						{{#if image}}
+						<div class="row">
+							<div class="post-image col-md-12"><img src="{{image}}" alt="{{title}}"></div>
+						</div>
+						<!-- / post image -->
 						{{/if}}
 					</div>
 					<div class="col-lg-8">
 						{{#if featured}}<span class="feat-strip">Featured</span>{{/if}}
 						<h1 class="post-title">{{title}}</h1>
 						<div class="post-meta">{{#author}}<span>By</span> <a href="{{url}}" title="{{name}}">{{name}}</a>, {{/author}} <time datetime="{{date published_at format="YYYY-MM-DD"}}">{{date published_at format="MMM DD, YYYY"}}</time></div>
+						{{#if tags}}
+						<ul class="post-tags">
+							{{#foreach tags}}
+							<li>
+								<a href="{{url}}" title="{{name}}" class="tag-{{id}}">{{name}}</a>
+							</li>
+							{{/foreach}}
+						</ul>
+						{{/if}}
 					</div>
 				</div>
 
-				{{#if image}}
-				<div class="row">
-					<div class="post-image col-md-12"><img src="{{image}}" alt="{{title}}"></div>
-				</div>
-				<!-- / post image -->
-				{{/if}}
+
 
 				<div class="row">
 					<div class="col-lg-8 col-lg-push-4">

@@ -1,8 +1,13 @@
 // out: null
 
 #content {
+	.post + .post {
+		border-top: 1px solid $divider-gray;
+	}
 	.post {
-		margin-bottom: 35px;
+		margin-bottom: 20px;
+		padding-top: 15px;
+
 
 		.feat-strip {
 			padding: 3px 5px;
@@ -35,12 +40,9 @@
 			}
 
 			.post-tags {
-				z-index: 10;
-				position: absolute;
-				bottom: 5px;
-				left: 10px;
+				position: relative;
 				@include transition(opacity .25s ease-in-out);
-				@include opacity(0.3);
+				@include opacity(0.5);
 			}
 
 			&:hover {
@@ -90,14 +92,6 @@
 					.post-image-link {
 						display: none;
 					}
-
-					.post-tags {
-						display: inline-block;
-						width: auto;
-						top: 0;
-						left: 0;
-						position: relative;
-					}
 				}
 
 				&:hover {
@@ -140,8 +134,8 @@
 	}
 
 	.post-tags {
-		display: inline;
-		margin: 0;
+		display: inline-block;
+		margin: 10px 0;
 		padding: 0;
 		list-style-type: none;
 

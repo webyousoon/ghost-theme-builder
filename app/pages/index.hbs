@@ -1,27 +1,22 @@
 {{!< default}}
-{{! The above will include this template into the body of the default template }}
 
 {{> page-header}}
-{{! This includes the page-header.hbs partial }}
 
 <main id="main" class="container">
-	<div id="wrapper" class="clearfix">
+  <div id="wrapper" class="clearfix">
 
-		<div id="content" class="content-3-col">
-			<div class="row">
-				{{> loops/loop-3-col}}
-				{{! This includes the loops/loop-3-col.hbs partial }}
-			</div>
-			{{pagination}}
-		</div>
-		<!-- / content -->
+    <div id="content" class="content-3-col">
+      <div class="row">
+        {{> loops/loop-classic}}
+      </div>
+      {{pagination}}
+    </div>
+    <!-- / content -->
 
-		{{> page-sidebar}}
-		{{! This includes the page-sidebar.hbs partial }}
-	</div>
-	<!-- / wrapper -->
+    {{> page-sidebar}}
+  </div>
+  <!-- / wrapper -->
 </main>
 <!-- / main -->
 
 {{> page-footer}}
-{{! This includes the page-footer.hbs partial }}

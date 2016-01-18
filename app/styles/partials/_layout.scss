@@ -92,7 +92,7 @@ body {
 				color: #888888;
 				@include border-radius(0);
 				border-top: 2px solid $divider-color;
-				border-bottom: 1px solid $divider-gray;
+				//border-bottom: 1px solid $divider-gray;
 
 				.page-number {
 					float: left;
