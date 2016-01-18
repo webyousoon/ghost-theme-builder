@@ -1,6 +1,6 @@
 (function ($) {
 	"use strict";
-	
+
 	// Settings
 
 	var twitterWidget = true;					// Set to false to hide widget
@@ -8,7 +8,7 @@
 
 	var disqusComments = true;					// Set to false to hide comments
 	var disqusUser = 'disqus_shortname';		// Set to your own Disqus Shortname
-	
+
 	var weatherWidget = true;					// Set to false to hide widget
 	var weaterLocation = 'London, UK';			// Set to your own desired location - Info at: http://simpleweatherjs.com/
 	var weatherUnit = 'c';						// Use 'c' for Celsius or 'f' for Fahrenheit
@@ -21,11 +21,11 @@
 
 
 	// Home template setup
-	
+
 	$('.home-template .post:nth-of-type(2), .home-template .post:nth-of-type(3)').removeClass('col-lg-4');
-	
+
 	// Navigation
-	
+
 	$('#mobile-nav-trigger').click(function (el) {
 		el.preventDefault();
 
@@ -39,7 +39,7 @@
 			$('#nav ul.nav').slideDown('fast').addClass('active');
 		}
 	});
-	
+
 	$(window).resize(function () {
 		$('#mobile-nav-trigger').removeClass('active');
 		$('#mobile-nav-trigger').html('Show Navigation');
@@ -50,9 +50,9 @@
 			$('#nav ul.nav').hide();
 		}
 	});
-	
+
 	// Disqus comments
-	
+
 	if (disqusComments === true && $('#disqus_thread').length) {
 		(function () {
 			var dsq = document.createElement('script');
@@ -64,14 +64,14 @@
 	} else {
 		$('.post-template .post-comments').remove();
 	}
-	
+
 	// Related posts
-	
+
 	$('.related-posts').ghostRelated({
 		titleClass: 'h1.post-title',
 		tagsClass: '.post-tags'
 	});
-	
+
 	// Twitter widget
 
 	if (twitterWidget === true) {
@@ -87,32 +87,7 @@
 	} else {
 		$('#widget-twitter').remove();
 	}
-	
-	// Weather widget
-	// Uses the jQuery pluggin available at: http://simpleweatherjs.com/
-	
-	if (weatherWidget === true) {
-		$.simpleWeather({
-			location: weaterLocation,
-			woeid: '',
-			unit: weatherUnit,
-			success: function (weather) {
-				var html = '<h3><i class="icon-' + weather.code + '"></i></h3>';
-				html += '<p class="weather-location">' + weather.city + ', ' + weather.region + '</p>';
-				html += '<p class="weather-temp">' + weather.temp + '&deg;' + weather.units.temp + '</p>';
-				html += '<p class="weather-currently">' + weather.currently + ', ';
-				html += weather.wind.direction + ' ' + weather.wind.speed + ' ' + weather.units.speed + '</p>';
 
-				$('#widget-weather').html(html);
-			},
-			error: function (error) {
-				$('#widget-weather').html('<p>' + error + '</p>');
-			}
-		});
-	} else {
-		$('#widget-weather').remove();
-	}
-	
 	// Latest posts widget
 
 	function latestPosts() {
@@ -135,7 +110,7 @@
 			$('#widget-latest ul').html(recent);
 		});
 	}
-	
+
 	latestPosts();
-	
+
 })(jQuery);
