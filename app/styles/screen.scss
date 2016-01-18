@@ -1,3 +1,7 @@
+@import "partials/reset";
+
+// @import "./node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+@import "vendors/bootstrap/bootstrap";
 
 @import "partials/functions";
 @import "partials/variables";
