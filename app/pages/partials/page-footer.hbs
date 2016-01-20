@@ -1,17 +1,16 @@
 <footer id="footer">
 	<div class="container">
-		<div class="back-top"><a href="#top"><i class="mdi mdi-arrow-up-bold-circle-outline"></i> Back to top</a></div>
+		<div class="back-top">
+			<a href="#top">
+				<i class="fa fa-arrow-up"></i>&nbsp;&nbsp;Back to top
+			</a>
+		</div>
 		<div class="row footer-wrapper">
-			<div class="col-md-8">
+			<div class="col-md-12">
 				{{navigation}}
-				<div class="copyright">&copy; Copyright by {{@blog.title}}. All rights reserved.</div>
-			</div>
-			<div class="col-md-4 footer-logo text-right">
-				{{#if @blog.logo}}
-					<img src="{{@blog.logo}}" height="40" alt="{{@blog.title}}">
-				{{else}}
-					{{@blog.title}}
-				{{/if}}
+				<div class="copyright">
+					{{!-- <p>&copy; Copyright by {{@blog.title}}. All rights reserved.</p> --}}
+					<p>Proudly published with <a href="https://ghost.org/">Ghost</a>.</p>
 			</div>
 		</div>
 	</div>
