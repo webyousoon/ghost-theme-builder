@@ -4,6 +4,7 @@
 
 	.container {
 		background-color: shade($top-bar-background, 10%);
+		text-align: right;
 	}
 
 	ul {
@@ -13,7 +14,8 @@
 		font-family: $nav-font;
 
 		li {
-			float: left;
+			// float: left;
+			display: inline-block;
 			font-size: 12 * $toRems;
 			text-transform: uppercase;
 
@@ -22,7 +24,7 @@
 				line-height: 30px;
 				color: #fff;
 				text-decoration: none;
-				@include opacity(0.5);
+				// @include opacity(0.5);
 
 				&:hover {
 					@include opacity(1);

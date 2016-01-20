@@ -156,6 +156,11 @@ gulp.task('copy-extras', function () {
     .pipe(gulp.dest(basePaths.dest));
 });
 
+gulp.task('copy-font-awesome', function () {
+  return gulp.src('./node_modules/font-awesome/fonts/**')
+    .pipe(gulp.dest(paths.assets.dest + '/css/fonts/fontawesome'));
+});
+
 // // Build the sitemap
 // gulp.task('sitemap', function () {
 //   return gulp.src(paths.html.src)
