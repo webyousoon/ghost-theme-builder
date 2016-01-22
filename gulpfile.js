@@ -197,7 +197,7 @@ gulp.task('serve', ['build'], function() {
 // MASTER TASKS
 // ******************************************
 
-gulp.task('build', ['copy-extras', 'copy-assets', 'js', 'css', 'pages', 'image-min', 'tag']);
+gulp.task('build', ['copy-extras', 'copy-assets', 'copy-font-awesome', 'js', 'css', 'pages', 'image-min', 'tag']);
 
 gulp.task('default', ['clean'], function () {
   gulp.start('build');

@@ -4,15 +4,10 @@
 	// Settings
 
 	var twitterWidget = true;					// Set to false to hide widget
-	var twitterWidgetID = 'add_your_ID_here';	// ID of your Twitter widget
+	var twitterWidgetID = '690463629821419520';	// ID of your Twitter widget
 
-	var disqusComments = true;					// Set to false to hide comments
+	var disqusComments = false;					// Set to false to hide comments
 	var disqusUser = 'disqus_shortname';		// Set to your own Disqus Shortname
-
-	var weatherWidget = true;					// Set to false to hide widget
-	var weaterLocation = 'London, UK';			// Set to your own desired location - Info at: http://simpleweatherjs.com/
-	var weatherUnit = 'c';						// Use 'c' for Celsius or 'f' for Fahrenheit
-
 
 	// WARNING: Do not edit below this point unless
 	// you are absolutely sure of what you are doing!
