@@ -3,7 +3,7 @@
 	background-color: $top-bar-background;
 
 	.container {
-		background-color: shade($top-bar-background, 10%);
+		background-color: shade($top-bar-background, 20%);
 		text-align: right;
 	}
 
@@ -50,10 +50,11 @@
 }
 
 #nav {
-	background-color: shade($header-background, 10%);
+	background-color: shade($header-background, 30%);
 
 	.container {
 		padding: 0;
+		// background-color: shade($top-bar-background, 20%);
 	}
 
 	#mobile-nav-trigger {

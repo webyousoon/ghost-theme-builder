@@ -14,28 +14,27 @@ body {
 }
 
 #header {
-	background-color: $header-background;
+	// background-color: $header-background;
+	background-color: shade($header-background, 10%);
 
 	#top {
 
 		.container {
-			padding: 30px;
-			background-color: shade($header-background, 5%);
+			// padding: 30px;
+			background-color: $header-background;
+			padding: 0;
 		}
 
 		#logo {
-			float: left;
+			width: 100%;
 
-			@media (max-width: 991px) {
-				float: none;
-				width: 100%;
-				text-align: center;
+			img {
+				height: 200px;
+				width: 200px;
 			}
 
-			@media (max-width: 480px) {
-				img {
-					max-width: 150px;
-				}
+			@media (max-width: 991px) {
+				text-align: center;
 			}
 		}
 
@@ -174,7 +173,7 @@ body {
 
 		.footer-wrapper {
 			padding: 30px 15px;
-			color: tint($footer-background, 40%);
+			color: shade($footer-background, 30%);
 
 			.nav {
 				margin: 0;
@@ -186,7 +185,7 @@ body {
 					margin: 0 15px 5px 0;
 
 					a {
-						color: #ffffff;
+						color: $color-pom-1;
 						padding: 0;
 
 						&:hover {

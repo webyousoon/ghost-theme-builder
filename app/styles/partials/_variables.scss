@@ -12,9 +12,15 @@ $body-font: "Source Sans Pro", "HelveticaNeue", "Helvetica Neue", Helvetica, Ari
 $heading-font: "Montserrat", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
 $nav-font: "Montserrat", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
 
+$color-pom-1: #2f1b43;
+$color-pom-2: #71ffcd;
+$color-pom-3: #1dadc7;
+
+
 $body-background: #f5f5f5;
-$header-background: #314e69;
-$footer-background: #111111;
+// $header-background: #314e69;
+$header-background: #2f1b43;
+$footer-background: $color-pom-2;
 
 $top-bar-background: shade($header-background, 30%);
 $top-bar-color: #ffffff;
@@ -24,14 +30,16 @@ $top-bar-link-color: hover;
 $nav-background: transparent;
 $nav-background-hover: $header-background;
 $nav-color: lighten($header-background, 30%);
-$nav-color-hover: #fff;
+$nav-color: white;
+$nav-color-hover: $color-pom-2;
 
 $heading-color: #000000;
 $heading-color-hover: #333333;
 
 $text-color: #333333;
 
-$link-color: #cca20f;
+// $link-color: #cca20f;
+$link-color: $color-pom-3;
 $link-color-hover: shade($link-color, 20%);
 
 $button-background: $link-color;
@@ -42,7 +50,7 @@ $button-color-hover: #ffffff;
 $feat-strip-color: #000000;
 $feat-strip-background: #f7c928;
 
-$divider-color: #87a2bd;
+$divider-color: $color-pom-2;
 $divider-gray: #dddddd;
 
 // Social colors
