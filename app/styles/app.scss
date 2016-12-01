@@ -25,13 +25,12 @@
 @import "partials/ghost/ghost-post";
 
 
-
-
 a {
   color: $color-first;
   font-family: $font-title;
   text-decoration: none;
   transition: all 0.3s ease-out;
+  word-wrap: break-word;
   &:hover {
     color: $color-first-annex;
   }
