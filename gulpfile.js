@@ -94,12 +94,8 @@ gulp.task('css', function () {
   return es.concat(gulp.src('./vendor/styles/*.css'), appFile)
     .pipe($.concat('screen.css'))
     .pipe($.autoprefixer())
-    .pipe($.if(production,
-      $.minifycss())
-    )
-    .pipe($.if(production,
-      $.rename('screen.min.css'))
-    )
+    .pipe($.if(production, $.minifycss()))
+    .pipe($.if(production, $.rename('screen.min.css')))
     .pipe(gulp.dest(paths.styles.dest))
     .pipe(reload({stream: true}));
 });
@@ -129,7 +125,13 @@ gulp.task('image-min', [], function () {
 // DEST TASKS
 // ******************************************
 
-gulp.task('tag', ['pages'], function() {
+gulp.task('post-build', ['pages'], function() {
+
+  gulp.src(paths.pages.dest + 'default.hbs')
+    .pipe($.if(production, $.replace('{{asset "css/screen.css"}}', '{{asset "css/screen.min.css"}}')))
+    .pipe($.if(production, $.replace('{{asset "js/app.js"}}', '{{asset "js/app.min.js"}}')))
+    .pipe(gulp.dest(paths.pages.dest));
+
   return gulp.src(paths.pages.dest + 'partials/footer.hbs')
     .pipe($.replace(/vx.x.x/g, pjson.name + ' ' + pjson.version))
     .pipe(gulp.dest(paths.pages.dest + 'partials'));
@@ -191,7 +193,7 @@ gulp.task('watch', ['build'], function() {
 // MASTER TASKS
 // ******************************************
 
-gulp.task('build', ['copy-extras', 'copy-assets', 'js', 'css', 'pages', 'image-min', 'tag']);
+gulp.task('build', ['copy-extras', 'copy-assets', 'js', 'css', 'pages', 'image-min', 'post-build']);
 
 gulp.task('default', ['clean'], function () {
   gulp.start('build');

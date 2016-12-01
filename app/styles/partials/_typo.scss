@@ -1,3 +1,5 @@
+// Bye bye encoding issues
+@charset 'utf-8';
 
 %basic-text {
   @include text($font-size-base-s, $font-size-base-s, $line-height-s);

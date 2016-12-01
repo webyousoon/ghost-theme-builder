@@ -1,4 +1,5 @@
-
+// Bye bye encoding issues
+@charset 'utf-8';
 
 footer#contentinfo {
   border-top: 4px solid $color-gray-darker;
@@ -23,7 +24,7 @@ footer#contentinfo {
       margin-left: 0;
     }
     p b {
-      color: $color-light; 
+      color: $color-light;
     }
   }
 
