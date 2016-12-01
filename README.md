@@ -8,3 +8,4 @@ Build easily a theme for Ghost platform with [Gulp](http://gulpjs.com).
     * Dependencies: `npm install`
 * Run:
     * `gulp build` — build the theme
+    * `gulp build --production` — build the theme to export in a production way
