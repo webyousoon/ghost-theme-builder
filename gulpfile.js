@@ -16,34 +16,35 @@ var $ = require('gulp-load-plugins')({
 // variables
 var pjson = require('./package.json');
 var production = !!(argv.production);
+var theme = argv.theme || 'default';
 var basePaths = {
-  src: './app/',
-  dest: './' + pjson.name + '/'
+  src: './themes/' + theme + '/',
+  dest: './dist/' + theme + '/'
 };
 var paths = {
   pages: {
-      src: basePaths.src + 'pages/**',
-      dest: basePaths.dest
+    src: basePaths.src + 'pages/**',
+    dest: basePaths.dest
   },
   images: {
-      src: basePaths.src + 'img/**',
-      dest: basePaths.dest + 'assets/img/'
+    src: basePaths.src + 'img/**',
+    dest: basePaths.dest + 'assets/img/'
   },
   assets: {
-      src: [basePaths.src + 'assets/**'],
-      dest: basePaths.dest + 'assets/'
+    src: [basePaths.src + 'assets/**'],
+    dest: basePaths.dest + 'assets/'
   },
   scripts: {
-      src: basePaths.src + 'scripts/**/*.js',
-      dest: basePaths.dest + 'assets/js/'
+    src: basePaths.src + 'scripts/**/*.js',
+    dest: basePaths.dest + 'assets/js/'
   },
   styles: {
-      src: basePaths.src + 'styles/**/*.scss',
-      dest: basePaths.dest + 'assets/css/'
+    src: basePaths.src + 'styles/**/*.scss',
+    dest: basePaths.dest + 'assets/css/'
   },
   fonts: {
-      src: basePaths.src + 'assets/fonts/**',
-      dest: basePaths.dest + 'assets/fonts/'
+    src: basePaths.src + 'assets/fonts/**',
+    dest: basePaths.dest + 'assets/fonts/'
   }
 };
 
@@ -158,9 +159,8 @@ gulp.task('copy-assets', [], function() {
 
 gulp.task('copy-extras', function () {
   return gulp.src([
-      'package.json',
-      'README.md',
-      'LICENSE'], {dot: true})
+      basePaths.src + 'package.json',
+      basePaths.src + 'LICENSE'], {dot: true})
     .pipe(gulp.dest(basePaths.dest));
 });
 
