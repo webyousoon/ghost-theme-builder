@@ -1,0 +1,82 @@
+.post-summary {
+  .post-title,
+  .post-date,
+  .post-tags,
+  .post-excerpt,
+  .post-excerpt-link,
+  .post-author {
+    padding: 4px 8px;
+  }
+  .post {
+
+    margin-bottom: 32px;
+
+    // border-bottom: 1px solid $color-post-border;
+    // border-left: 1px solid $color-post-border;
+    // border-right: 1px solid $color-post-border;
+
+    display: block;
+    header {
+      position: relative;
+    }
+    // > header, > section {
+    //   background: $color-light;
+    // }
+
+    .post-img {
+      display: block;
+      max-width: 100%;
+      width: 100%;
+      @include mq(medium) {
+        display: none;
+        // max-width: 50%;
+        // width: 50%;
+      }
+      @include mq(large) {
+        display: block;
+        // max-width: 100%;
+        // width: 100%;
+      }
+    }
+
+    // .post-date {
+    //   font-family: $font-bold;
+    //   display: block;
+    // }
+  }
+  .post-title {
+    border-top: 2px solid $color-gray-lightest;
+    padding-bottom: 16px;
+    padding-top: 16px;
+    margin-top: 2px;
+  }
+  .post-date {
+    @extend %common-post-date;
+  }
+  .post-excerpt {
+    padding-bottom: 16px;
+  }
+  .post-excerpt-link {
+    text-align: right;
+  }
+  .post-meta  {
+    background: $color-gray-lightest;
+  }
+  .read-more {
+    background: $color-second;
+    display: inline-block;
+    position: relative;
+    // right: 8px;
+    // top: -32px;
+    @include circle(32px);
+    > a {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      top: 0;
+      width: 32px;
+      height: 32px;
+    }
+  }
+}

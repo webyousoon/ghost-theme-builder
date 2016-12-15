@@ -1,0 +1,26 @@
+<section id="news" class="post-summary board row">
+
+  {{#foreach posts}}
+  <div class="col-single">
+      <article class="{{post_class}}">
+          <header>
+              <h3 class="post-title"><a href="{{url}}">{{{title}}}</a></h3>
+              {{#if image}}<img class="post-img" src={{image}} />{{/if}}
+          </header>
+          <section>
+            <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD/MM/YYYY"}}</time>
+            <p class="post-excerpt">{{excerpt words="26"}}</p>
+            <p class="post-excerpt-link"><a href="{{url}}"><i class="icon icon-more-circle"></i> Lire la suite</a></p>
+          </section>
+      </article>
+  </div>
+  <div class="quick-dirty-clearfix"></div>
+  {{/foreach}}
+
+  <div style="clear: both;"></div>
+
+  {{pagination}}
+
+</section>
+
+

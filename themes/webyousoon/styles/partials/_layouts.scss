@@ -1,0 +1,95 @@
+// Bye bye encoding issues
+@charset 'utf-8';
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.row {
+  overflow: hidden;
+  *zoom: 1;
+}
+
+
+.col-single,
+.col-double,
+.col-full {
+  padding-left: $gutter-width-s;
+  padding-right: $gutter-width-s;
+  margin: 0;
+}
+
+// .col-full {
+//   float: none;
+//   width: 100%;
+// }
+
+[class^="col-"] [class^="col-"] {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+@include mq(medium) {
+  .col-double {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  [class^="col-"] .col-half,
+  [class^="col-"] .col-full {
+    padding-left: $gutter-width-s;
+    padding-right: $gutter-width-s;
+  }
+  .col-half {
+    width: 50%;
+  }
+  .col-half {
+    float: left;
+  }
+  .col-half + .col-half {
+    float: right;
+    &:after {
+      // @include clearfix;
+    }
+  }
+}
+
+@include mq(large) {
+  .site-wrapper {
+    margin: $gutter-width-xl auto $gutter-width-m auto;
+    // width: 960px;
+  }
+
+  .col-single {
+    float: left;
+    width: 33.33333%;
+  }
+  .col-double {
+    float: right;
+    width: 66.66666%;
+  }
+
+  .col-half {
+    padding-left: $gutter-width-s;
+    padding-right: $gutter-width-s;
+    margin: 0;
+  }
+}
+
+@include mq(xlarge) {
+  .site-wrapper {
+    // margin: auto;
+    width: 960px;
+  }
+
+  .col-single {
+    float: left;
+    width: 33.33333%;
+  }
+  .col-double {
+    float: right;
+    width: 66.66666%;
+  }
+}
