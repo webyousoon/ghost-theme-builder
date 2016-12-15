@@ -1,0 +1,10 @@
+{
+  "name": "pieceofmake",
+  "description": "Theme Piece of make, built with ghost-theme-builder",
+  "author": "Alvin Berthelot",
+  "version": "0.0.2",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/webyousoon/ghost-theme-builder"
+  }
+}

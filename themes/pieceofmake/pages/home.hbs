@@ -1,0 +1,22 @@
+{{!< default}}
+
+{{> page-header}}
+
+<main id="main" class="container">
+  <div id="wrapper" class="clearfix">
+
+    <div id="content" class="content-home">
+      <div class="row">
+        {{> loops/loop-classic}}
+      </div>
+      {{pagination}}
+    </div>
+    <!-- / content -->
+
+    {{> page-sidebar}}
+  </div>
+  <!-- / wrapper -->
+</main>
+<!-- / main -->
+
+{{> page-footer}}

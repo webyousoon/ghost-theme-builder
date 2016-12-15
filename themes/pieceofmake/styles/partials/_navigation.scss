@@ -1,0 +1,148 @@
+
+#top-bar {
+	background-color: $top-bar-background;
+
+	.container {
+		background-color: shade($top-bar-background, 20%);
+		text-align: right;
+	}
+
+	ul {
+		margin: 0;
+		padding: 0;
+		list-style-type: none;
+		font-family: $nav-font;
+
+		li {
+			// float: left;
+			display: inline-block;
+			font-size: 12 * $toRems;
+			text-transform: uppercase;
+
+			a {
+				padding: 0 15px;
+				line-height: 30px;
+				color: #fff;
+				text-decoration: none;
+				// @include opacity(0.5);
+
+				&:hover {
+					@include opacity(1);
+				}
+			}
+		}
+	}
+
+	@media (max-width: 991px) {
+		text-align: center;
+
+		ul {
+			li {
+				float: none;
+				display: inline-block;
+			}
+		}
+	}
+
+	@media (max-width: 767px) {
+		display: none;
+	}
+}
+
+#nav {
+	background-color: shade($header-background, 30%);
+
+	.container {
+		padding: 0;
+		// background-color: shade($top-bar-background, 20%);
+	}
+
+	#mobile-nav-trigger {
+		display: none;
+	}
+
+	ul.nav {
+		display: block;
+		background-color: shade($header-background, 20%);
+		margin: 0;
+		padding: 0;
+		list-style-type: none;
+
+		li {
+			display: inline-block;
+			float: left;
+			border-right: 1px solid shade($header-background, 5%);
+			font-family: $nav-font;
+			font-size: 13 * $toRems;
+
+			a {
+				display: inline-block;
+				line-height: 45 * $toRems;
+				padding: 0 15px;
+				text-decoration: none;
+				text-transform: uppercase;
+				color: $nav-color;
+				background: $nav-background;
+
+				&:hover {
+					color: $nav-color-hover;
+					background: $nav-background-hover;
+				}
+
+				i.mdi {
+					font-size: 18 * $toRems;
+				}
+			}
+
+			&.nav-current {
+				a {
+					color: $nav-color-hover;
+					background: $nav-background;
+
+					&:hover {
+						color: $nav-color-hover;
+						background: $nav-background-hover;
+					}
+				}
+			}
+		}
+
+		&.active {
+			display: block;
+		}
+	}
+
+	@media (max-width: 991px) {
+		text-align: center;
+
+		#mobile-nav-trigger {
+			display: block;
+			padding: 0 15px;
+			font-family: $nav-font;
+			font-size: 14 * $toRems;
+			line-height: 45 * $toRems;
+			text-decoration: none;
+			text-transform: uppercase;
+			color: $nav-color;
+			background-color: shade($header-background, 20%);
+
+			&:hover {
+				color: $nav-color-hover;
+				background: $nav-background-hover;
+			}
+		}
+
+		ul.nav {
+			display: none;
+
+			li {
+				float: none;
+				width: 100%;
+				border-right: 0;
+				border-top: 1px solid shade($header-background, 5%);
+
+				a { width: 100%; }
+			}
+		}
+	}
+}

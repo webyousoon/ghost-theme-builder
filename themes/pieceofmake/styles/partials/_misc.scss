@@ -1,0 +1,71 @@
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+.mt-0 { margin-top: 0; }
+.mt-5 { margin-top: 5px; }
+.mt-10 { margin-top: 10px; }
+.mt-15 { margin-top: 15px; }
+.mt-30 { margin-top: 30px; }
+
+.mb-0 { margin-bottom: 0; }
+.mb-5 { margin-bottom: 5px; }
+.mb-10 { margin-bottom: 10px; }
+.mb-15 { margin-bottom: 15px; }
+.mb-30 { margin-bottom: 30px; }
+
+input:not([type=radio]):not([type=checkbox]):not([type=button]):not([type=reset]):not([type=submit]),
+textarea,
+select {
+	padding: 7px 12px;
+	border: 1px solid $divider-gray;
+	@include border-radius(5px);
+	background: #ffffff;
+
+	&:focus {
+		outline: 0;
+		border-color: shade($divider-gray, 50%);
+	}
+}
+
+button,
+input[type=button],
+input[type=reset],
+input[type=submit] {
+	@extend .button;
+	&:hover {
+		@extend .button:hover;
+	}
+}
+
+table {
+	margin-bottom: 1.5em;
+	border-collapse: collapse;
+    border-spacing: 0;
+    empty-cells: show;
+	border: 1px solid $divider-gray;
+
+	tr {
+		th,
+		td {
+			text-align: left;
+			padding: 0.5rem 1rem;
+			border-width: 0 0 1px;
+			border-bottom: 1px solid $divider-gray;
+
+			&:first-child {
+				border-left-width: 0;
+			}
+		}
+
+		th {
+			background-color: #eeeeee;
+		}
+
+		&:nth-child(odd) {
+			td { background-color: #fafafa; }
+		}
+	}
+}
