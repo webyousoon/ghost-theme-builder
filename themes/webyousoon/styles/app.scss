@@ -1,6 +1,8 @@
 // Bye bye encoding issues
 @charset 'utf-8';
 
+@import "partials/reset";
+
 @import "partials/variables";
 @import "partials/functions";
 @import "partials/mixins";
@@ -29,7 +31,7 @@ a {
   color: $color-first;
   font-family: $font-title;
   text-decoration: none;
-  transition: all 0.3s ease-out;
+  transition: all 0.5s ease-out;
   word-wrap: break-word;
   &:hover {
     color: $color-first-annex;
@@ -38,6 +40,10 @@ a {
 
 b {
   font-family: $font-bold;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-title;
 }
 
 li i + span {
@@ -94,26 +100,33 @@ li i + span {
   .info, .post {
     margin-top: $gutter-height-l;
   }
+  .vignette {
+    margin-bottom: $gutter-height-m;
+  }
   header {
     position: relative;
   }
   header > i {
-    color: $color-gray-lighter;
+    color: $color-gray-lightest;
     font-size: 48px;
     position: absolute;
     right: 0;
     top: 12px;
-    // z-index: 1;
   }
-  h2 {
-    color: $color-gray-lighter;
+  h1 {
+    color: $color-gray-lightest;
     font-size: 36px;
+    margin-bottom: $gutter-height-m;
     text-align: center;
     text-transform: uppercase;
   }
-  h3 {
+  h2 {
+    border-bottom: 1px solid $color-first;
     color: $color-gray-darker;
     font-size: 24px;
+    margin-bottom: $gutter-height-s;
+    padding-bottom: $gutter-height-s;
+    padding-top: $gutter-height-s;
   }
 }
 @include mq(large) {
@@ -125,14 +138,6 @@ li i + span {
 }
 
 .focus, .focus-inverse {
-  // font-family: $font-handwriting;
-  // font-size: 32px;
-  // line-height: 43px;
-
-  // font-family: $font-handwriting;
-  // font-size: 24px;
-  // line-height: 33px;
-
   font-size: 18px;
   line-height: 26px;
 }
@@ -140,12 +145,11 @@ li i + span {
   color: $color-first;
 }
 .focus-inverse {
-  color: $color-light;
+  color: $color-white;
 }
 
 .container {
   background: $color-bg;
-  // background: $color-gray-lightest;
   color: $color-text;
 }
 
@@ -159,7 +163,3 @@ li i + span {
   padding: 0;
 }
 
-// ul {
-//   list-style: none;
-//   padding: 0;
-// }

@@ -19,9 +19,9 @@
     margin: 10px;
   }
 
-  background: $color-light;
+  background: $color-white;
   @include mq(large) {
-    background: $color-light-darker;
+    background: $color-near-white;
   }
 
 
@@ -113,7 +113,7 @@
     // border-top: 2px solid $color-gray-lightest;
   }
   &.read-next {
-    background: $color-light-darker;
+    background: $color-near-white;
   }
 }
 

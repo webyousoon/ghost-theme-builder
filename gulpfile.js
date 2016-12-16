@@ -142,18 +142,13 @@ gulp.task('post-build', ['pages'], function() {
 // COPY TASKS
 // ******************************************
 
-// gulp.task('copy-fonts', [], function() {
-//   return gulp.src(['./app/assets/css/fonts/**'])
-//     .pipe(gulp.dest('./public/css/fonts'));
-// });
+gulp.task('copy-fonts', [], function() {
+  return gulp.src([basePaths.src + 'assets/fonts/**'])
+    .pipe(gulp.dest(paths.assets.dest + 'css/fonts'));
+});
 
-// gulp.task('copy-icons', [], function() {
-//   return gulp.src(['./app/assets/icons/**'])
-//     .pipe(gulp.dest(basePaths.dest));
-// });
-
-gulp.task('copy-assets', [], function() {
-  return gulp.src(paths.assets.src)
+gulp.task('copy-icons', [], function() {
+  return gulp.src([basePaths.src + 'assets/icons/**'])
     .pipe(gulp.dest(paths.assets.dest));
 });
 
@@ -193,7 +188,7 @@ gulp.task('watch', ['build'], function() {
 // MASTER TASKS
 // ******************************************
 
-gulp.task('build', ['copy-extras', 'copy-assets', 'js', 'css', 'pages', 'image-min', 'post-build']);
+gulp.task('build', ['copy-extras', 'copy-fonts', 'copy-icons', 'js', 'css', 'pages', 'image-min', 'post-build']);
 
 gulp.task('default', ['clean'], function () {
   gulp.start('build');

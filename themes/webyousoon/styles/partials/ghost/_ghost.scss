@@ -25,7 +25,7 @@
 
 
 #content {
-  background: $color-light-darker;
+  background: $color-near-white;
 }
 
 .page-title {
@@ -55,7 +55,7 @@ $color-post-border: #CFD8DC;
   }
 
   .blog-title {
-    color: $color-light;
+    color: $color-white;
     font-size: 64px;
     margin-bottom: 64px;
     margin-top: 80px;
@@ -104,14 +104,13 @@ $color-post-border: #CFD8DC;
 
 
 .post {
-  background: $color-light;
+  background: $color-white;
 }
 
 // TAG PAGE
 
 .tag-page {
-  // background: $color-light;
-    background: $color-light-darker;
+  background: $color-near-white;
   @include mq(large) {
   }
 

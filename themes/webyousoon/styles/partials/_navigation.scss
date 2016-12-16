@@ -1,10 +1,6 @@
 // Bye bye encoding issues
 @charset 'utf-8';
 
-header#banner {
-  // position: relative;
-}
-
 #navigation {
   position: fixed;
   left: 0;
@@ -12,8 +8,7 @@ header#banner {
   top: 0;
   height: 50px;
   line-height: 32px;
-  // background: rgba($color-light, 0.5);
-  background: $color-light;
+  background: $color-white;
   border-bottom: 2px solid $color-first-annex;
   text-align: right;
   z-index: 4;
@@ -22,7 +17,6 @@ header#banner {
     display: inline-block;
     font-size: 18px;
     padding: 8px 16px 8px 16px;
-    // padding: 8px 16px 8px 0;
     text-transform: uppercase;
   }
 
@@ -35,10 +29,7 @@ header#banner {
     transition: all 0.7s ease-in-out;
     a {
       display: block;
-      color: $color-light;
-      // &#link-contactus {
-      //   color: $color-second;
-      // }
+      color: $color-white;
     }
   }
 
@@ -50,13 +41,8 @@ header#banner {
     background: rgba($color-first-annex, $opacity-background);
   }
 
-  #link-contactus {
-    // background: rgba($color-first-annex, $opacity-background);
-  }
-
-
   #menu-hover {
-    background: $color-light;
+    background: $color-white;
     margin-top: -480px;
   }
 }
@@ -88,15 +74,13 @@ header#banner {
     #menu-toggle.on + #menu-hover,
     #menu-hover {
       display: block;
-      // transition: all 0.5s ease-out;
-      background: $color-light;
+      background: $color-white;
       color: red;
       margin-top: 0;
       a {
         display: inline-block;
         color: $color-first;
         padding: 0;
-        // padding: 0 16px;
         &:hover {
           color: $color-first-annex;
         }

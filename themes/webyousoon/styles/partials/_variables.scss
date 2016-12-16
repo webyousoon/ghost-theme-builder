@@ -1,28 +1,17 @@
 // Bye bye encoding issues
 @charset 'utf-8';
 
-$color-light: #FFFFFF;
-$color-dark: #000000;
+$color-white: #FFFFFF;
+$color-black: #000000;
 
-$color-light-darker: #F5F5F5;
+$color-near-white: whitesmoke;
 
-$color-gray-neutral-lightest: #E0E0E0;
-$color-gray-neutral-lighter: #757575;
-$color-gray-neutral-medium: #616161;
-$color-gray-neutral-darker: #424242;
-$color-gray-neutral-darkest: #212121;
+$color-gray-lightest: #E0E0E0;
+$color-gray-lighter: #757575;
+$color-gray-medium: #616161;
+$color-gray-darker: #424242;
+$color-gray-darkest: #212121;
 
-$color-gray-blue-lightest: #ECEFF1;
-$color-gray-blue-lighter: #CFD8DC;
-$color-gray-blue-medium: #78909C;
-$color-gray-blue-darker: #455A64;
-$color-gray-blue-darkest: #263238;
-
-$color-gray-lightest: $color-gray-neutral-lightest;
-$color-gray-lighter: $color-gray-neutral-lighter;
-$color-gray-medium: $color-gray-neutral-medium;
-$color-gray-darker: $color-gray-neutral-darker;
-$color-gray-darkest: $color-gray-neutral-darkest;
 
 $color-purple: #4A148C;
 $color-blue: #4A90E2;
@@ -44,11 +33,11 @@ $color-second: $color-orange;
 $color-second-annex: darken($color-second, 10%);
 $color-second-darkest: darken($color-second, 33%);
 
-$color-bg: $color-light;
+$color-bg: $color-white;
 $color-bg-inverse: $color-gray-darkest;
 
-$color-text: $color-gray-medium;
-$color-text-inverse: $color-light;
+$color-text: $color-gray-lighter;
+$color-text-inverse: $color-white;
 $color-text-focus: $color-first;
 
 $opacity-background: 0.8;
@@ -76,10 +65,6 @@ $line-height-s: 1.5;
 $line-height-m: 1.5;
 $line-height-l: 1.8;
 $line-height-xl: 1.8;
-
-
-
-
 
 $screen-s: 480px;
 $screen-m: 768px;
