@@ -10,6 +10,7 @@
   .post {
 
     margin-bottom: 32px;
+    border: 1px solid $color-second;
 
     // border-bottom: 1px solid $color-post-border;
     // border-left: 1px solid $color-post-border;
@@ -45,7 +46,6 @@
     // }
   }
   .post-title {
-    border-top: 2px solid $color-gray-lightest;
     padding-bottom: 16px;
     padding-top: 16px;
     margin-top: 2px;

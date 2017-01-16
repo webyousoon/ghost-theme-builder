@@ -20,11 +20,6 @@
   }
 
   background: $color-white;
-  @include mq(large) {
-    background: $color-near-white;
-  }
-
-
 
   .post {
     margin-bottom: $gutter-height-xl;
