@@ -14,9 +14,9 @@ var $ = require('gulp-load-plugins')({
 });
 
 // variables
-var pjson = require('./package.json');
 var production = !!(argv.production);
 var theme = argv.theme || 'casper';
+var pjson = require('./themes/' + theme + '/package.json');
 var basePaths = {
   src: './themes/' + theme + '/',
   dest: './dist/' + theme + '/'
