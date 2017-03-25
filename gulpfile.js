@@ -27,7 +27,7 @@ var paths = {
     dest: basePaths.dest
   },
   images: {
-    src: basePaths.src + 'img/**',
+    src: basePaths.src + 'assets/img/**',
     dest: basePaths.dest + 'assets/img/'
   },
   assets: {
